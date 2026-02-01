@@ -27,6 +27,30 @@ The project uses pre-commit hooks (`.pre-commit-config.yaml`) for:
 - YAML validation
 - Secret scanning (gitleaks, talisman)
 
+## Cache Busting & Versioning
+
+### Current Version: 0.9
+
+This project uses query string versioning for cache busting on CSS and JavaScript files.
+
+### How to Update Version
+
+1. Make your changes to CSS/JS files
+2. Increment version number in the comment at top of `index.html`
+3. Find and replace all occurrences: `?v=0.9` → `?v=X.X`
+4. Commit with version in message: `git commit -m "Description - vX.X"`
+
+### Versioning Guidelines
+
+- **Patch update** (0.9 → 0.9.1): Small CSS tweaks, bug fixes
+- **Minor update** (0.9 → 1.0): New features, significant changes
+- **What gets versioned**: CSS files (reset, style, brands) and JS files (contact-form, cv-modal)
+- **What doesn't**: Images, icons, fonts (rarely change)
+
+### Why Query Strings?
+
+Versioned URLs (`style.css?v=0.9`) create unique cache entries. When you bump the version, browsers fetch the new file instead of using the cached 7-day-old version.
+
 ## Architecture
 
 ### CSS Structure
