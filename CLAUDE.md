@@ -29,21 +29,21 @@ The project uses pre-commit hooks (`.pre-commit-config.yaml`) for:
 
 ## Cache Busting & Versioning
 
-### Current Version: 0.9
+### Current Version: 0.9.6
 
 This project uses query string versioning for cache busting on CSS and JavaScript files.
 
 ### How to Update Version
 
 1. Make your changes to CSS/JS files
-2. Increment version number in the comment at top of `index.html`
-3. Find and replace all occurrences: `?v=0.9` → `?v=X.X`
+2. Increment version number in the comment at top of `index.html` and `en/index.html`
+3. Find and replace all occurrences: `?v=0.9.6` → `?v=X.X` in both HTML files
 4. Commit with version in message: `git commit -m "Description - vX.X"`
 
 ### Versioning Guidelines
 
 - **Patch update** (0.9 → 0.9.1): Small CSS tweaks, bug fixes
-- **Minor update** (0.9 → 1.0): New features, significant changes
+- **Minor update** (0.9 → 0.9.5): New features, significant changes
 - **What gets versioned**: CSS files (reset, style, brands) and JS files (contact-form, cv-modal)
 - **What doesn't**: Images, icons, fonts (rarely change)
 
@@ -94,7 +94,26 @@ When asked to create a button with specific text, icon, and color, use these tem
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Owner's personal website (customized) |
+| `index.html` | Owner's personal website - Portuguese version (primary) |
+| `en/index.html` | Owner's personal website - English version |
 | `index_littlelink.html` | Original LittleLink examples - reference for existing button styles (social networks, etc.) |
 | `css/brands.css` | Branded button styles (100+ pre-built) |
 | `css/style.css` | Core layout and theme system |
+| `js/i18n-strings.js` | Internationalization strings for JS components |
+
+## Internationalization (i18n)
+
+The site supports Portuguese (primary) and English:
+- Portuguese: `/index.html` (default)
+- English: `/en/index.html`
+
+### Language Switcher
+- Fixed position top-right corner
+- Shows flag + language code (EN/PT)
+- Links to alternate language version
+
+### JS Translations
+Form validation and status messages use `js/i18n-strings.js`:
+- Uses `t('keyName')` function to get translated strings
+- Detects language from `<html lang="...">` attribute
+- Falls back to Portuguese if key not found

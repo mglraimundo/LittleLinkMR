@@ -143,22 +143,22 @@
 
 		// Validate name
 		if (!name) {
-			showError('contact-name', 'O nome é obrigatório');
+			showError('contact-name', t('nameRequired'));
 			isValid = false;
 		}
 
 		// Validate email
 		if (!email) {
-			showError('contact-email', 'O email é obrigatório');
+			showError('contact-email', t('emailRequired'));
 			isValid = false;
 		} else if (!isValidEmail(email)) {
-			showError('contact-email', 'Por favor introduza um endereço de email válido');
+			showError('contact-email', t('emailInvalid'));
 			isValid = false;
 		}
 
 		// Validate message
 		if (!message) {
-			showError('contact-message', 'A mensagem é obrigatória');
+			showError('contact-message', t('messageRequired'));
 			isValid = false;
 		}
 
@@ -233,17 +233,17 @@
 
 			// Handle response
 			if (data.success) {
-				showStatus('success', 'Mensagem enviada com sucesso! Obrigado por entrar em contacto.');
+				showStatus('success', t('successMessage'));
 				// Auto-close modal after 2 seconds
 				setTimeout(() => {
 					closeModal();
 				}, 2000);
 			} else {
-				showStatus('error', data.message || 'Falha ao enviar mensagem. Por favor tente novamente.');
+				showStatus('error', data.message || t('errorMessage'));
 			}
 		} catch (error) {
 			console.error('Form submission error:', error);
-			showStatus('error', 'Erro de rede. Por favor verifique a sua ligação e tente novamente.');
+			showStatus('error', t('networkError'));
 		} finally {
 			setLoadingState(false);
 		}
