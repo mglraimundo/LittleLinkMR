@@ -159,7 +159,7 @@ body {
 .bio-divider {
 	width:4rem;                      /* 64px centered line */
 	height:2px;
-	background-color:currentColor;
+	background-color:#1a1a1a;
 	border:none;
 	opacity:0.2;
 	margin:var(--spacing-xl) auto;   /* 3rem top and bottom */
@@ -291,6 +291,10 @@ a:hover {
 :root.theme-dark footer {
 	color:#9ca3af;
 }
+:root.theme-dark .bio-divider {
+	background-color:#ffffff;
+	opacity:0.3;
+}
 
 /* Auto theme */
 :root.theme-auto {
@@ -314,6 +318,10 @@ a:hover {
 :root.theme-auto footer {
 	color:#9ca3af;
 }
+	:root.theme-auto .bio-divider {
+		background-color:#ffffff;
+		opacity:0.3;
+	}
 }
 
 /* Button Text Color Override
@@ -429,6 +437,7 @@ body.modal-open {
 	padding: 1.5rem;
 	color: #374151;
 	line-height: 1.6;
+	font-size: var(--scale-0);
 }
 
 .modal-body .cv-list {
@@ -830,7 +839,7 @@ body.modal-open {
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   @media (max-width:34.375rem) {            /* 550px */
     h1 {
-	font-size:2rem;                         /* 32px */
+	font-size:1.75rem;                      /* 28px */
 	}
 	body {
 	font-size:1rem;                    		/* 16px */
