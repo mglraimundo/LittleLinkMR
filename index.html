@@ -55,6 +55,7 @@
       content="https://mraimundo.com/images/avatar.png"
     />
     <meta property="og:image:alt" content="Dr. Miguel Raimundo" />
+    <meta property="og:locale" content="pt_PT" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
@@ -88,6 +89,34 @@
     <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
     <!-- Learn more at https://github.com/sethcottle/littlelink-extended.
          Remove comments if you've added LittleLink Extended dependencies -->
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Miguel Raimundo",
+      "medicalSpecialty": "https://schema.org/Optometric",
+      "url": "https://mraimundo.com",
+      "image": "https://mraimundo.com/images/avatar.png",
+      "description": "Médico Oftalmologista na ULS Coimbra e na Unidade de Oftalmologia de Coimbra (UOC)",
+      "hospitalAffiliation": [
+        {
+          "@type": "Hospital",
+          "name": "ULS Coimbra"
+        },
+        {
+          "@type": "Hospital",
+          "name": "Unidade de Oftalmologia de Coimbra (UOC)",
+          "url": "https://uoc.pt"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mglraimundo/",
+        "https://youtube.com/@mglraimundo"
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -113,7 +142,7 @@
           class="avatar avatar--rounded"
           src="images/avatar.png"
           srcset="images/avatar@2x.png 2x"
-          alt="LittleLink"
+          alt="Dr. Miguel Raimundo"
         />
 
         <!-- Replace with your name or brand -->

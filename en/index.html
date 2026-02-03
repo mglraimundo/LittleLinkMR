@@ -89,6 +89,34 @@
     <!-- <link rel="stylesheet" href="/css/brands-extended.css"> -->
     <!-- Learn more at https://github.com/sethcottle/littlelink-extended.
          Remove comments if you've added LittleLink Extended dependencies -->
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Miguel Raimundo",
+      "medicalSpecialty": "https://schema.org/Optometric",
+      "url": "https://mraimundo.com/en/",
+      "image": "https://mraimundo.com/images/avatar.png",
+      "description": "Ophthalmologist at ULS Coimbra and at the Coimbra Ophthalmology Unit (UOC)",
+      "hospitalAffiliation": [
+        {
+          "@type": "Hospital",
+          "name": "ULS Coimbra"
+        },
+        {
+          "@type": "Hospital",
+          "name": "Unidade de Oftalmologia de Coimbra (UOC)",
+          "url": "https://uoc.pt"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mglraimundo/",
+        "https://youtube.com/@mglraimundo"
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -114,7 +142,7 @@
           class="avatar avatar--rounded"
           src="/images/avatar.png"
           srcset="/images/avatar@2x.png 2x"
-          alt="LittleLink"
+          alt="Dr. Miguel Raimundo"
         />
 
         <!-- Replace with your name or brand -->
